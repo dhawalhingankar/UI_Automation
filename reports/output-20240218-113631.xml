@@ -1,0 +1,2357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.7.0 on win32)" generated="20240218 11:36:31.140" rpa="false" schemaversion="4">
+<suite id="s1" name="Admin" source="C:\Users\Hp\PycharmProjects1\Automation_UI\tests\admin.robot">
+<test id="s1-t1" name="To verify user is able to add new admin with enabled status" line="8">
+<kw name="Open the browser and enter the url to the application" library="common_res">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>open browser</arg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240218 11:36:34.447" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com'.</msg>
+<status status="PASS" starttime="20240218 11:36:34.446" endtime="20240218 11:36:40.046"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:34.446" endtime="20240218 11:36:40.046"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:34.445" endtime="20240218 11:36:40.046"/>
+</kw>
+<kw name="Login to the application" library="common_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${username_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:40.048" endtime="20240218 11:36:40.800"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_xpath}</arg>
+<arg>${valid_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:40.802" level="INFO">Typing text 'Admin' into text field '//input[@name = 'username']'.</msg>
+<status status="PASS" starttime="20240218 11:36:40.800" endtime="20240218 11:36:41.134"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${password_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:41.135" endtime="20240218 11:36:41.179"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_xpath}</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:41.180" level="INFO">Typing text 'admin123' into text field '//input[@name = 'password']'.</msg>
+<status status="PASS" starttime="20240218 11:36:41.180" endtime="20240218 11:36:41.362"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${login_button}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:41.362" endtime="20240218 11:36:41.405"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:41.407" level="INFO">Clicking button '//button[@type = 'submit']'.</msg>
+<status status="PASS" starttime="20240218 11:36:41.405" endtime="20240218 11:36:42.657"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${dashboard_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:42.657" endtime="20240218 11:36:43.236"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>${dashboard_xpath}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${dashboard_xpath}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240218 11:36:43.271" level="INFO">Element '//a[@class='oxd-main-menu-item active']' is displayed.</msg>
+<status status="PASS" starttime="20240218 11:36:43.238" endtime="20240218 11:36:43.271"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:43.236" endtime="20240218 11:36:43.271"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:40.048" endtime="20240218 11:36:43.272"/>
+</kw>
+<kw name="Go to admin panel" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:43.275" endtime="20240218 11:36:43.319"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${admin_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:43.323" level="INFO">Clicking element '//li[1]//a[1]//span[1]'.</msg>
+<status status="PASS" starttime="20240218 11:36:43.321" endtime="20240218 11:36:44.750"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:43.274" endtime="20240218 11:36:44.751"/>
+</kw>
+<kw name="Perform add action" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${add_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:44.752" endtime="20240218 11:36:45.334"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${add_xpath}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:45.335" level="INFO">Clicking button '//button[normalize-space()='Add']'.</msg>
+<status status="PASS" starttime="20240218 11:36:45.335" endtime="20240218 11:36:45.873"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:44.752" endtime="20240218 11:36:45.873"/>
+</kw>
+<kw name="Enter user details" library="admin_res">
+<var>${user_enable}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${user_dropdown}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:45.874" endtime="20240218 11:36:46.475"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${user_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:46.476" level="INFO">Clicking element '(//div[@class='oxd-select-text-input'][normalize-space()='-- Select --'])[1]'.</msg>
+<status status="PASS" starttime="20240218 11:36:46.475" endtime="20240218 11:36:46.558"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${user_role_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:46.558" endtime="20240218 11:36:46.597"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${user_role_xpath}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${user_role_xpath}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20240218 11:36:46.611" level="INFO">Current page contains element '//div[@role='option' and @class='oxd-select-option']/span[text()='Admin']'.</msg>
+<status status="PASS" starttime="20240218 11:36:46.598" endtime="20240218 11:36:46.611"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:46.597" endtime="20240218 11:36:46.612"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${user_role_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:46.612" level="INFO">Clicking element '//div[@role='option' and @class='oxd-select-option']/span[text()='Admin']'.</msg>
+<status status="PASS" starttime="20240218 11:36:46.612" endtime="20240218 11:36:46.697"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${employee_name}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:46.698" endtime="20240218 11:36:46.740"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${employee_name}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${employee_name}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:46.742" level="INFO">Clicking element '//input[@placeholder='Type for hints...']'.</msg>
+<status status="PASS" starttime="20240218 11:36:46.741" endtime="20240218 11:36:46.877"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:46.741" endtime="20240218 11:36:46.878"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${employee_name}</arg>
+<arg>${employee_initial}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${employee_name}</arg>
+<arg>${employee_initial}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:46.879" level="INFO">Typing text 'a' into text field '//input[@placeholder='Type for hints...']'.</msg>
+<status status="PASS" starttime="20240218 11:36:46.878" endtime="20240218 11:36:47.009"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:46.878" endtime="20240218 11:36:47.009"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240218 11:36:52.012" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240218 11:36:47.009" endtime="20240218 11:36:52.012"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${employee_name_value}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:52.013" endtime="20240218 11:36:52.067"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${employee_name_value}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:52.068" level="INFO">Clicking element '//div[@class='oxd-autocomplete-option'][1]'.</msg>
+<status status="PASS" starttime="20240218 11:36:52.067" endtime="20240218 11:36:52.166"/>
+</kw>
+<kw name="First Name" library="FakerLibrary">
+<var>${username_random}</var>
+<msg timestamp="20240218 11:36:52.168" level="INFO">${username_random} = Mark</msg>
+<status status="PASS" starttime="20240218 11:36:52.167" endtime="20240218 11:36:52.168"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_username_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:52.168" endtime="20240218 11:36:52.218"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${admin_username_xpath}</arg>
+<arg>${username_random}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${admin_username_xpath}</arg>
+<arg>${username_random}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:52.220" level="INFO">Typing text 'Mark' into text field '(//input[@class='oxd-input oxd-input--active'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:36:52.218" endtime="20240218 11:36:52.367"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:52.218" endtime="20240218 11:36:52.367"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${password_random}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20240218 11:36:52.370" level="INFO">${password_random} = @43sGb$3d#</msg>
+<status status="PASS" starttime="20240218 11:36:52.368" endtime="20240218 11:36:52.370"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_password_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:52.371" endtime="20240218 11:36:52.435"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${admin_password_xpath}</arg>
+<arg>${password_random}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${admin_password_xpath}</arg>
+<arg>${password_random}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:52.437" level="INFO">Typing text '@43sGb$3d#' into text field '(//input[@type='password'])[1]'.</msg>
+<status status="PASS" starttime="20240218 11:36:52.436" endtime="20240218 11:36:52.601"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:52.435" endtime="20240218 11:36:52.601"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${confirm_password}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:52.601" endtime="20240218 11:36:52.641"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${confirm_password}</arg>
+<arg>${password_random}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${confirm_password}</arg>
+<arg>${password_random}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:52.642" level="INFO">Typing text '@43sGb$3d#' into text field '(//input[@type='password'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:36:52.641" endtime="20240218 11:36:52.804"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:52.641" endtime="20240218 11:36:52.804"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${username_random}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20240218 11:36:52.806" level="INFO">${username_random} = Mark</msg>
+<status status="PASS" starttime="20240218 11:36:52.805" endtime="20240218 11:36:52.806"/>
+</kw>
+<msg timestamp="20240218 11:36:52.806" level="INFO">${user_enable} = Mark</msg>
+<status status="PASS" starttime="20240218 11:36:45.874" endtime="20240218 11:36:52.806"/>
+</kw>
+<kw name="Enter enabled status" library="admin_res">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${status_dropdown}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${status_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:52.809" level="INFO">Clicking element '//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]'.</msg>
+<status status="PASS" starttime="20240218 11:36:52.808" endtime="20240218 11:36:52.906"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:52.808" endtime="20240218 11:36:52.906"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${status_enabled}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:52.906" endtime="20240218 11:36:52.947"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${status_enabled}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:52.948" level="INFO">Clicking element '//span[normalize-space()='Enabled']'.</msg>
+<status status="PASS" starttime="20240218 11:36:52.947" endtime="20240218 11:36:53.032"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:52.807" endtime="20240218 11:36:53.032"/>
+</kw>
+<kw name="Perform save action" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${save_button}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:36:53.033" endtime="20240218 11:36:53.075"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Button</arg>
+<arg>${save_button}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${save_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:36:53.076" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20240218 11:36:53.075" endtime="20240218 11:36:53.208"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:53.075" endtime="20240218 11:36:53.209"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>C:\\Users\\Hp\\PycharmProjects1\\Automation_UI\\res</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240218 11:36:53.209" endtime="20240218 11:36:53.211"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>C:\\Users\\Hp\\PycharmProjects1\\Automation_UI\\res</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240218 11:36:53.211" level="INFO">C:\Users\Hp\PycharmProjects1\Automation_UI\res</msg>
+<status status="PASS" starttime="20240218 11:36:53.211" endtime="20240218 11:36:53.212"/>
+</kw>
+<status status="PASS" starttime="20240218 11:36:53.033" endtime="20240218 11:36:53.212"/>
+</kw>
+<kw name="Validate user is successfully added" library="admin_res">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain</arg>
+<arg>Success</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:36:53.528" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:36:53.528" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:36:53.213" endtime="20240218 11:36:53.551"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:36:54.812" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:36:54.813" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:36:54.552" endtime="20240218 11:36:54.813"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:36:56.089" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:36:56.089" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:36:55.825" endtime="20240218 11:36:56.089"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:36:57.352" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:36:57.352" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:36:57.102" endtime="20240218 11:36:57.353"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:36:58.620" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:36:58.621" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:36:58.358" endtime="20240218 11:36:58.621"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:36:59.921" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:36:59.921" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:36:59.634" endtime="20240218 11:36:59.922"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:01.183" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:01.183" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:00.935" endtime="20240218 11:37:01.183"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:02.440" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:02.440" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:02.189" endtime="20240218 11:37:02.441"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:03.710" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:03.710" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:03.455" endtime="20240218 11:37:03.711"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:04.977" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:04.978" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:04.714" endtime="20240218 11:37:04.978"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:06.265" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-11.png"&gt;&lt;img src="selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:06.265" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:05.989" endtime="20240218 11:37:06.266"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:07.541" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:07.541" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:07.278" endtime="20240218 11:37:07.541"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:08.838" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:08.839" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:08.554" endtime="20240218 11:37:08.839"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:10.108" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:10.108" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:09.845" endtime="20240218 11:37:10.109"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:11.379" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:11.379" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:11.109" endtime="20240218 11:37:11.379"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:12.645" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:12.645" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:12.392" endtime="20240218 11:37:12.646"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:13.905" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:13.905" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:13.651" endtime="20240218 11:37:13.906"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:15.170" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:15.170" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:14.919" endtime="20240218 11:37:15.170"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:16.440" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:16.441" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:16.184" endtime="20240218 11:37:16.441"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:17.725" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:17.726" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:17.455" endtime="20240218 11:37:17.726"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:18.999" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:18.999" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:18.731" endtime="20240218 11:37:19.000"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:20.273" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-22.png"&gt;&lt;img src="selenium-screenshot-22.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:20.273" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:20.008" endtime="20240218 11:37:20.274"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:21.574" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:21.574" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:21.288" endtime="20240218 11:37:21.575"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:22.854" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:22.854" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:22.578" endtime="20240218 11:37:22.855"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:24.137" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-25.png"&gt;&lt;img src="selenium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:24.137" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:23.857" endtime="20240218 11:37:24.138"/>
+</kw>
+<msg timestamp="20240218 11:37:24.138" level="FAIL">Keyword 'Page Should Contain' failed after retrying 25 times. The last error was: Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:36:53.213" endtime="20240218 11:37:24.138"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>User has been successfully added</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240218 11:37:24.138" endtime="20240218 11:37:24.138"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain</arg>
+<arg>Successfully Saved</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="NOT RUN" starttime="20240218 11:37:24.139" endtime="20240218 11:37:24.139"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>New added user is displayed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240218 11:37:24.139" endtime="20240218 11:37:24.139"/>
+</kw>
+<status status="FAIL" starttime="20240218 11:36:53.212" endtime="20240218 11:37:24.139"/>
+</kw>
+<kw name="Search newly added user with username" library="admin_res">
+<status status="NOT RUN" starttime="20240218 11:37:24.140" endtime="20240218 11:37:24.140"/>
+</kw>
+<doc>This test case is for adding new user with enabled status</doc>
+<tag>Smoke</tag>
+<status status="FAIL" starttime="20240218 11:36:34.444" endtime="20240218 11:37:24.141">Keyword 'Page Should Contain' failed after retrying 25 times. The last error was: Page should have contained text 'Success' but did not.</status>
+</test>
+<test id="s1-t2" name="To verify user is able to add new admin with disabled status" line="21">
+<kw name="Go to admin panel" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:24.146" endtime="20240218 11:37:24.177"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${admin_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:24.178" level="INFO">Clicking element '//li[1]//a[1]//span[1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:24.177" endtime="20240218 11:37:25.314"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:24.145" endtime="20240218 11:37:25.315"/>
+</kw>
+<kw name="Perform add action" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${add_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:25.319" endtime="20240218 11:37:25.804"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${add_xpath}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:25.806" level="INFO">Clicking button '//button[normalize-space()='Add']'.</msg>
+<status status="PASS" starttime="20240218 11:37:25.805" endtime="20240218 11:37:26.392"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:25.317" endtime="20240218 11:37:26.392"/>
+</kw>
+<kw name="Enter user details" library="admin_res">
+<var>${user_disable}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${user_dropdown}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:26.394" endtime="20240218 11:37:26.810"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${user_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:26.811" level="INFO">Clicking element '(//div[@class='oxd-select-text-input'][normalize-space()='-- Select --'])[1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:26.810" endtime="20240218 11:37:26.927"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${user_role_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:26.928" endtime="20240218 11:37:26.978"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${user_role_xpath}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${user_role_xpath}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20240218 11:37:26.992" level="INFO">Current page contains element '//div[@role='option' and @class='oxd-select-option']/span[text()='Admin']'.</msg>
+<status status="PASS" starttime="20240218 11:37:26.979" endtime="20240218 11:37:26.992"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:26.978" endtime="20240218 11:37:26.993"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${user_role_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:26.993" level="INFO">Clicking element '//div[@role='option' and @class='oxd-select-option']/span[text()='Admin']'.</msg>
+<status status="PASS" starttime="20240218 11:37:26.993" endtime="20240218 11:37:27.108"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${employee_name}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:27.108" endtime="20240218 11:37:27.149"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${employee_name}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${employee_name}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:27.150" level="INFO">Clicking element '//input[@placeholder='Type for hints...']'.</msg>
+<status status="PASS" starttime="20240218 11:37:27.149" endtime="20240218 11:37:27.273"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:27.149" endtime="20240218 11:37:27.274"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${employee_name}</arg>
+<arg>${employee_initial}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${employee_name}</arg>
+<arg>${employee_initial}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:27.275" level="INFO">Typing text 'a' into text field '//input[@placeholder='Type for hints...']'.</msg>
+<status status="PASS" starttime="20240218 11:37:27.274" endtime="20240218 11:37:27.420"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:27.274" endtime="20240218 11:37:27.420"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240218 11:37:32.430" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240218 11:37:27.420" endtime="20240218 11:37:32.430"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${employee_name_value}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:32.431" endtime="20240218 11:37:32.467"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${employee_name_value}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:32.468" level="INFO">Clicking element '//div[@class='oxd-autocomplete-option'][1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:32.467" endtime="20240218 11:37:32.558"/>
+</kw>
+<kw name="First Name" library="FakerLibrary">
+<var>${username_random}</var>
+<msg timestamp="20240218 11:37:32.559" level="INFO">${username_random} = Ricky</msg>
+<status status="PASS" starttime="20240218 11:37:32.559" endtime="20240218 11:37:32.559"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_username_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:32.560" endtime="20240218 11:37:32.606"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${admin_username_xpath}</arg>
+<arg>${username_random}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${admin_username_xpath}</arg>
+<arg>${username_random}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:32.608" level="INFO">Typing text 'Ricky' into text field '(//input[@class='oxd-input oxd-input--active'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:37:32.607" endtime="20240218 11:37:32.853"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:32.607" endtime="20240218 11:37:32.854"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${password_random}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20240218 11:37:32.855" level="INFO">${password_random} = N%t3P9dkHl</msg>
+<status status="PASS" starttime="20240218 11:37:32.855" endtime="20240218 11:37:32.855"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_password_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:32.856" endtime="20240218 11:37:32.896"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${admin_password_xpath}</arg>
+<arg>${password_random}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${admin_password_xpath}</arg>
+<arg>${password_random}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:32.898" level="INFO">Typing text 'N%t3P9dkHl' into text field '(//input[@type='password'])[1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:32.897" endtime="20240218 11:37:33.157"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:32.896" endtime="20240218 11:37:33.157"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${confirm_password}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:33.158" endtime="20240218 11:37:33.214"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${confirm_password}</arg>
+<arg>${password_random}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${confirm_password}</arg>
+<arg>${password_random}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:33.216" level="INFO">Typing text 'N%t3P9dkHl' into text field '(//input[@type='password'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:37:33.215" endtime="20240218 11:37:33.386"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:33.214" endtime="20240218 11:37:33.386"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${username_random}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20240218 11:37:33.387" level="INFO">${username_random} = Ricky</msg>
+<status status="PASS" starttime="20240218 11:37:33.386" endtime="20240218 11:37:33.387"/>
+</kw>
+<msg timestamp="20240218 11:37:33.387" level="INFO">${user_disable} = Ricky</msg>
+<status status="PASS" starttime="20240218 11:37:26.393" endtime="20240218 11:37:33.387"/>
+</kw>
+<kw name="Enter disabled status" library="admin_res">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${status_dropdown}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${status_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:33.390" level="INFO">Clicking element '//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:33.389" endtime="20240218 11:37:33.466"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:33.389" endtime="20240218 11:37:33.466"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${status_disabled}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:33.466" endtime="20240218 11:37:33.517"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${status_disabled}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:33.518" level="INFO">Clicking element '//span[normalize-space()='Disabled']'.</msg>
+<status status="PASS" starttime="20240218 11:37:33.517" endtime="20240218 11:37:33.638"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:33.388" endtime="20240218 11:37:33.638"/>
+</kw>
+<kw name="Perform save action" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${save_button}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:33.640" endtime="20240218 11:37:33.675"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Button</arg>
+<arg>${save_button}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${save_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:33.676" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20240218 11:37:33.676" endtime="20240218 11:37:33.832"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:33.675" endtime="20240218 11:37:33.832"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>C:\\Users\\Hp\\PycharmProjects1\\Automation_UI\\res</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240218 11:37:33.832" endtime="20240218 11:37:33.833"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>C:\\Users\\Hp\\PycharmProjects1\\Automation_UI\\res</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240218 11:37:33.834" level="INFO">C:\Users\Hp\PycharmProjects1\Automation_UI\res</msg>
+<status status="PASS" starttime="20240218 11:37:33.834" endtime="20240218 11:37:33.834"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:33.639" endtime="20240218 11:37:33.835"/>
+</kw>
+<kw name="Validate user is successfully added" library="admin_res">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain</arg>
+<arg>Success</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:34.105" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:34.105" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:33.836" endtime="20240218 11:37:34.105"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:35.426" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:35.426" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:37:35.119" endtime="20240218 11:37:35.426"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:36.474" level="INFO">Current page contains text 'Success'.</msg>
+<status status="PASS" starttime="20240218 11:37:36.441" endtime="20240218 11:37:36.474"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:33.836" endtime="20240218 11:37:36.474"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>User has been successfully added</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240218 11:37:36.474" endtime="20240218 11:37:36.475"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain</arg>
+<arg>Successfully Saved</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Successfully Saved</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:37:36.510" level="INFO">Current page contains text 'Successfully Saved'.</msg>
+<status status="PASS" starttime="20240218 11:37:36.475" endtime="20240218 11:37:36.510"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:36.475" endtime="20240218 11:37:36.510"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>New added user is displayed</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240218 11:37:36.511" level="INFO">New added user is displayed</msg>
+<status status="PASS" starttime="20240218 11:37:36.511" endtime="20240218 11:37:36.511"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:33.835" endtime="20240218 11:37:36.511"/>
+</kw>
+<kw name="Search newly added user with username" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${user_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:36.513" endtime="20240218 11:37:36.568"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${user_xpath}</arg>
+<arg>${username_random}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:36.569" level="INFO">Typing text 'Ricky' into text field '(//input[@class = 'oxd-input oxd-input--active'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:37:36.568" endtime="20240218 11:37:36.718"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${search_button}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:36.718" endtime="20240218 11:37:36.763"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Button</arg>
+<arg>${search_button}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${search_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:36.769" level="INFO">Clicking button '//button[@type = 'submit']'.</msg>
+<msg timestamp="20240218 11:37:38.684" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-28.png"&gt;&lt;img src="selenium-screenshot-28.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:38.685" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button type="submit" class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space" data-v-10d463b7=""&gt;...&lt;/button&gt; is not clickable at point (901, 488). Other element would receive the click: &lt;div class="oxd-form-loader" data-v-d5bfe35b=""&gt;...&lt;/div&gt;
+  (Session info: chrome=121.0.6167.185)
+Stacktrace:
+	GetHandleVerifier [0x00007FF650687012+3522402]
+	(No symbol) [0x00007FF6502A8352]
+	(No symbol) [0x00007FF650155ABB]
+	(No symbol) [0x00007FF6501A3390]
+	(No symbol) [0x00007FF6501A10D2]
+	(No symbol) [0x00007FF65019E834]
+	(No symbol) [0x00007FF65019D569]
+	(No symbol) [0x00007FF650191910]
+	(No symbol) [0x00007FF6501BF05A]
+	(No symbol) [0x00007FF65019120A]
+	(No symbol) [0x00007FF6501BF270]
+	(No symbol) [0x00007FF6501DBDA3]
+	(No symbol) [0x00007FF6501BEE03]
+	(No symbol) [0x00007FF65018F4D4]
+	(No symbol) [0x00007FF6501905F1]
+	GetHandleVerifier [0x00007FF6506B9B9D+3730157]
+	GetHandleVerifier [0x00007FF65070F02D+4079485]
+	GetHandleVerifier [0x00007FF6507075D3+4048163]
+	GetHandleVerifier [0x00007FF6503DA649+718233]
+	(No symbol) [0x00007FF6502B4A3F]
+	(No symbol) [0x00007FF6502AFA94]
+	(No symbol) [0x00007FF6502AFBC2]
+	(No symbol) [0x00007FF65029F2E4]
+	BaseThreadInitThunk [0x00007FFC7E8B7344+20]
+	RtlUserThreadStart [0x00007FFC808A26B1+33]
+</msg>
+<status status="FAIL" starttime="20240218 11:37:36.764" endtime="20240218 11:37:38.713"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${search_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:39.718" level="INFO">Clicking button '//button[@type = 'submit']'.</msg>
+<status status="PASS" starttime="20240218 11:37:39.717" endtime="20240218 11:37:39.869"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:36.764" endtime="20240218 11:37:39.869"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${record_found}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:39.869" endtime="20240218 11:37:40.384"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>${record_found}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${record_found}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240218 11:37:40.412" level="INFO">Element '(//span[@class='oxd-text oxd-text--span'])[1]' is displayed.</msg>
+<status status="PASS" starttime="20240218 11:37:40.385" endtime="20240218 11:37:40.412"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:40.384" endtime="20240218 11:37:40.412"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:36.512" endtime="20240218 11:37:40.412"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${user_disable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20240218 11:37:40.414" level="INFO">${user_disable} = Ricky</msg>
+<status status="PASS" starttime="20240218 11:37:40.413" endtime="20240218 11:37:40.414"/>
+</kw>
+<doc>This test case is for adding new user with disabled status</doc>
+<tag>Regression</tag>
+<status status="PASS" starttime="20240218 11:37:24.144" endtime="20240218 11:37:40.414"/>
+</test>
+<test id="s1-t3" name="To verify user is able to add existing user" line="33">
+<kw name="Go to admin panel" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:40.417" endtime="20240218 11:37:40.446"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${admin_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:40.447" level="INFO">Clicking element '//li[1]//a[1]//span[1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:40.446" endtime="20240218 11:37:41.224"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:40.417" endtime="20240218 11:37:41.224"/>
+</kw>
+<kw name="Perform add action" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${add_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:41.226" endtime="20240218 11:37:41.599"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${add_xpath}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:41.600" level="INFO">Clicking button '//button[normalize-space()='Add']'.</msg>
+<status status="PASS" starttime="20240218 11:37:41.599" endtime="20240218 11:37:42.178"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:41.226" endtime="20240218 11:37:42.178"/>
+</kw>
+<kw name="Enter disabled status" library="admin_res">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${status_dropdown}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${status_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:42.181" level="INFO">Clicking element '//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]'.</msg>
+<msg timestamp="20240218 11:37:42.381" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:37:42.382" level="FAIL">Element with locator '//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]' not found.</msg>
+<status status="FAIL" starttime="20240218 11:37:42.180" endtime="20240218 11:37:42.397"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${status_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:43.409" level="INFO">Clicking element '//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:43.407" endtime="20240218 11:37:43.487"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:42.180" endtime="20240218 11:37:43.487"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${status_disabled}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:43.488" endtime="20240218 11:37:43.528"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${status_disabled}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:43.531" level="INFO">Clicking element '//span[normalize-space()='Disabled']'.</msg>
+<status status="PASS" starttime="20240218 11:37:43.529" endtime="20240218 11:37:43.633"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:42.179" endtime="20240218 11:37:43.633"/>
+</kw>
+<kw name="Enter existing user details" library="admin_res">
+<arg>${user_disable}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${user_dropdown}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:43.635" endtime="20240218 11:37:43.663"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${user_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:43.664" level="INFO">Clicking element '(//div[@class='oxd-select-text-input'][normalize-space()='-- Select --'])[1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:43.663" endtime="20240218 11:37:43.745"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${user_role_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:43.746" endtime="20240218 11:37:43.774"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${user_role_xpath}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${user_role_xpath}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20240218 11:37:43.786" level="INFO">Current page contains element '//div[@role='option' and @class='oxd-select-option']/span[text()='Admin']'.</msg>
+<status status="PASS" starttime="20240218 11:37:43.775" endtime="20240218 11:37:43.787"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:43.774" endtime="20240218 11:37:43.787"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${user_role_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:43.788" level="INFO">Clicking element '//div[@role='option' and @class='oxd-select-option']/span[text()='Admin']'.</msg>
+<status status="PASS" starttime="20240218 11:37:43.787" endtime="20240218 11:37:43.881"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${employee_name}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:43.882" endtime="20240218 11:37:43.911"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${employee_name}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${employee_name}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:43.914" level="INFO">Clicking element '//input[@placeholder='Type for hints...']'.</msg>
+<status status="PASS" starttime="20240218 11:37:43.912" endtime="20240218 11:37:43.989"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:43.911" endtime="20240218 11:37:43.989"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${employee_name}</arg>
+<arg>${employee_initial}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${employee_name}</arg>
+<arg>${employee_initial}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:43.992" level="INFO">Typing text 'a' into text field '//input[@placeholder='Type for hints...']'.</msg>
+<status status="PASS" starttime="20240218 11:37:43.990" endtime="20240218 11:37:44.129"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:43.990" endtime="20240218 11:37:44.129"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240218 11:37:49.139" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240218 11:37:44.129" endtime="20240218 11:37:49.139"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${employee_name_value}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:49.279" endtime="20240218 11:37:49.310"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${employee_name_value}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:49.311" level="INFO">Clicking element '//div[@class='oxd-autocomplete-option'][1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:49.310" endtime="20240218 11:37:49.393"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${status_dropdown}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${status_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:49.397" level="INFO">Clicking element '//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:49.395" endtime="20240218 11:37:49.467"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:49.393" endtime="20240218 11:37:49.467"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${status_disabled}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:49.467" endtime="20240218 11:37:49.520"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${status_disabled}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:49.521" level="INFO">Clicking element '//span[normalize-space()='Disabled']'.</msg>
+<status status="PASS" starttime="20240218 11:37:49.520" endtime="20240218 11:37:49.579"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${admin_username_xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:49.580" endtime="20240218 11:37:49.615"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${admin_username_xpath}</arg>
+<arg>${exist_user}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${admin_username_xpath}</arg>
+<arg>${exist_user}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:49.616" level="INFO">Typing text 'Ricky' into text field '(//input[@class='oxd-input oxd-input--active'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:37:49.615" endtime="20240218 11:37:49.849"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:49.615" endtime="20240218 11:37:49.849"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:43.634" endtime="20240218 11:37:49.849"/>
+</kw>
+<kw name="Validate error message is displayed" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${username_alert}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:49.852" endtime="20240218 11:37:50.985"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${username_alert}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240218 11:37:51.015" level="INFO">Element '//span[text() = 'Already exists']' is displayed.</msg>
+<status status="PASS" starttime="20240218 11:37:50.986" endtime="20240218 11:37:51.015"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:49.851" endtime="20240218 11:37:51.015"/>
+</kw>
+<doc>This test case is for adding existing user</doc>
+<tag>Regression</tag>
+<status status="PASS" starttime="20240218 11:37:40.416" endtime="20240218 11:37:51.016"/>
+</test>
+<test id="s1-t4" name="To verify search functionality is working" line="42">
+<kw name="Search newly added user with username &amp; user role" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${close_button}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:51.020" endtime="20240218 11:37:51.059"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Button</arg>
+<arg>${close_button}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${close_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:51.060" level="INFO">Clicking button '//button[normalize-space()='Cancel']'.</msg>
+<status status="PASS" starttime="20240218 11:37:51.059" endtime="20240218 11:37:51.648"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:51.059" endtime="20240218 11:37:51.648"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${user_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:51.648" endtime="20240218 11:37:52.035"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${user_xpath}</arg>
+<arg>${username_random}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${user_xpath}</arg>
+<arg>${username_random}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:52.038" level="INFO">Typing text 'Ricky' into text field '(//input[@class = 'oxd-input oxd-input--active'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:37:52.036" endtime="20240218 11:37:52.186"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:52.036" endtime="20240218 11:37:52.186"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${userrole_dropdown}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${userrole_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:52.187" level="INFO">Clicking element '(//div[@class='oxd-select-text-input'][normalize-space()='-- Select --'])[1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:52.186" endtime="20240218 11:37:52.291"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:52.186" endtime="20240218 11:37:52.291"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${userrole_option}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:52.291" endtime="20240218 11:37:52.339"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${userrole_option}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${userrole_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:52.341" level="INFO">Clicking element '(//span[text() = 'Admin'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:37:52.340" endtime="20240218 11:37:52.451"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:52.340" endtime="20240218 11:37:52.451"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Button</arg>
+<arg>${search_button}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${search_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:52.453" level="INFO">Clicking button '//button[@type = 'submit']'.</msg>
+<status status="PASS" starttime="20240218 11:37:52.452" endtime="20240218 11:37:52.673"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:52.452" endtime="20240218 11:37:52.674"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:51.019" endtime="20240218 11:37:52.674"/>
+</kw>
+<kw name="Validate newly added user details" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${record_found_1}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:52.675" endtime="20240218 11:37:53.179"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${record_found_1}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240218 11:37:53.210" level="INFO">Element '//span[text()='(1) Record Found']' is displayed.</msg>
+<status status="PASS" starttime="20240218 11:37:53.180" endtime="20240218 11:37:53.211"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Not Contain</arg>
+<arg>No Records Found</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>No Records Found</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20240218 11:37:53.257" level="INFO">Current page does not contain text 'No Records Found'.</msg>
+<status status="PASS" starttime="20240218 11:37:53.211" endtime="20240218 11:37:53.257"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:53.211" endtime="20240218 11:37:53.257"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:52.675" endtime="20240218 11:37:53.257"/>
+</kw>
+<kw name="Search newly added user with username, user role &amp; Employee name" library="admin_res">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Button</arg>
+<arg>${reset_button}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${reset_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:53.259" level="INFO">Clicking button '//button[normalize-space()='Reset']'.</msg>
+<status status="PASS" starttime="20240218 11:37:53.259" endtime="20240218 11:37:53.420"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:53.258" endtime="20240218 11:37:53.420"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${user_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:53.420" endtime="20240218 11:37:53.453"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${user_xpath}</arg>
+<arg>${username_random}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${user_xpath}</arg>
+<arg>${username_random}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:53.455" level="INFO">Typing text 'Ricky' into text field '(//input[@class = 'oxd-input oxd-input--active'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:37:53.454" endtime="20240218 11:37:53.626"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:53.454" endtime="20240218 11:37:53.626"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${userrole_dropdown}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${userrole_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:53.629" level="INFO">Clicking element '(//div[@class='oxd-select-text-input'][normalize-space()='-- Select --'])[1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:53.627" endtime="20240218 11:37:53.708"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:53.626" endtime="20240218 11:37:53.708"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${userrole_option}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:53.709" endtime="20240218 11:37:53.790"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${userrole_option}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${userrole_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:53.792" level="INFO">Clicking element '(//span[text() = 'Admin'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:37:53.791" endtime="20240218 11:37:53.922"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:53.791" endtime="20240218 11:37:53.922"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${search_employee}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_employee}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:53.924" level="INFO">Clicking element '//input[@placeholder = 'Type for hints...']'.</msg>
+<status status="PASS" starttime="20240218 11:37:53.923" endtime="20240218 11:37:54.056"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:53.923" endtime="20240218 11:37:54.056"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${search_employee}</arg>
+<arg>${employee_initial}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${search_employee}</arg>
+<arg>${employee_initial}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:54.058" level="INFO">Typing text 'a' into text field '//input[@placeholder = 'Type for hints...']'.</msg>
+<status status="PASS" starttime="20240218 11:37:54.057" endtime="20240218 11:37:54.204"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:54.056" endtime="20240218 11:37:54.204"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240218 11:37:59.210" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240218 11:37:54.205" endtime="20240218 11:37:59.210"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${search_employee_dropdown}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:59.211" endtime="20240218 11:37:59.266"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${search_employee_dropdown}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_employee_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:59.268" level="INFO">Clicking element '//div[@role= 'listbox']//child::div[1]'.</msg>
+<status status="PASS" starttime="20240218 11:37:59.267" endtime="20240218 11:37:59.374"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:59.266" endtime="20240218 11:37:59.375"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Button</arg>
+<arg>${search_button}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${search_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:37:59.380" level="INFO">Clicking button '//button[@type = 'submit']'.</msg>
+<status status="PASS" starttime="20240218 11:37:59.377" endtime="20240218 11:37:59.525"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:59.375" endtime="20240218 11:37:59.525"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:53.258" endtime="20240218 11:37:59.525"/>
+</kw>
+<kw name="Validate newly added user details" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${record_found_1}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:37:59.526" endtime="20240218 11:38:00.434"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${record_found_1}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240218 11:38:00.538" level="INFO">Element '//span[text()='(1) Record Found']' is displayed.</msg>
+<status status="PASS" starttime="20240218 11:38:00.434" endtime="20240218 11:38:00.538"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Not Contain</arg>
+<arg>No Records Found</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>No Records Found</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20240218 11:38:00.575" level="INFO">Current page does not contain text 'No Records Found'.</msg>
+<status status="PASS" starttime="20240218 11:38:00.539" endtime="20240218 11:38:00.575"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:00.539" endtime="20240218 11:38:00.575"/>
+</kw>
+<status status="PASS" starttime="20240218 11:37:59.526" endtime="20240218 11:38:00.575"/>
+</kw>
+<kw name="Search newly added user with username, user role, Employee name &amp; status(Disabled)" library="admin_res">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Button</arg>
+<arg>${reset_button}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${reset_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:00.578" level="INFO">Clicking button '//button[normalize-space()='Reset']'.</msg>
+<status status="PASS" starttime="20240218 11:38:00.577" endtime="20240218 11:38:00.704"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:00.577" endtime="20240218 11:38:00.704"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${user_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:00.704" endtime="20240218 11:38:00.739"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${user_xpath}</arg>
+<arg>${username_random}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${user_xpath}</arg>
+<arg>${username_random}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:00.740" level="INFO">Typing text 'Ricky' into text field '(//input[@class = 'oxd-input oxd-input--active'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:38:00.739" endtime="20240218 11:38:00.912"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:00.739" endtime="20240218 11:38:00.912"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${userrole_dropdown}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${userrole_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:00.914" level="INFO">Clicking element '(//div[@class='oxd-select-text-input'][normalize-space()='-- Select --'])[1]'.</msg>
+<status status="PASS" starttime="20240218 11:38:00.913" endtime="20240218 11:38:01.016"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:00.913" endtime="20240218 11:38:01.017"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${userrole_option}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:01.017" endtime="20240218 11:38:01.049"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${userrole_option}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${userrole_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:01.050" level="INFO">Clicking element '(//span[text() = 'Admin'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:38:01.050" endtime="20240218 11:38:01.171"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:01.049" endtime="20240218 11:38:01.172"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${search_employee}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_employee}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:01.173" level="INFO">Clicking element '//input[@placeholder = 'Type for hints...']'.</msg>
+<status status="PASS" starttime="20240218 11:38:01.172" endtime="20240218 11:38:01.276"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:01.172" endtime="20240218 11:38:01.276"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${search_employee}</arg>
+<arg>${employee_initial}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${search_employee}</arg>
+<arg>${employee_initial}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:01.279" level="INFO">Typing text 'a' into text field '//input[@placeholder = 'Type for hints...']'.</msg>
+<status status="PASS" starttime="20240218 11:38:01.278" endtime="20240218 11:38:01.401"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:01.277" endtime="20240218 11:38:01.401"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240218 11:38:06.409" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240218 11:38:01.401" endtime="20240218 11:38:06.409"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${search_employee_dropdown}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:06.410" endtime="20240218 11:38:06.440"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${search_employee_dropdown}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_employee_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:06.442" level="INFO">Clicking element '//div[@role= 'listbox']//child::div[1]'.</msg>
+<status status="PASS" starttime="20240218 11:38:06.441" endtime="20240218 11:38:06.529"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:06.440" endtime="20240218 11:38:06.529"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${status}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${status}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:06.532" level="INFO">Clicking element '(//div[@class='oxd-select-text oxd-select-text--active'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:38:06.531" endtime="20240218 11:38:06.671"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:06.530" endtime="20240218 11:38:06.671"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${search_disabled}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:06.671" endtime="20240218 11:38:06.719"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${search_disabled}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_disabled}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:06.720" level="INFO">Clicking element '//span[text() = 'Disabled']'.</msg>
+<status status="PASS" starttime="20240218 11:38:06.720" endtime="20240218 11:38:06.830"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:06.719" endtime="20240218 11:38:06.830"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Button</arg>
+<arg>${search_button}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${search_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:06.832" level="INFO">Clicking button '//button[@type = 'submit']'.</msg>
+<status status="PASS" starttime="20240218 11:38:06.831" endtime="20240218 11:38:06.977"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:06.831" endtime="20240218 11:38:06.978"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:00.576" endtime="20240218 11:38:06.978"/>
+</kw>
+<kw name="Validate newly added user details" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${record_found_1}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:06.981" endtime="20240218 11:38:07.694"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${record_found_1}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240218 11:38:07.722" level="INFO">Element '//span[text()='(1) Record Found']' is displayed.</msg>
+<status status="PASS" starttime="20240218 11:38:07.694" endtime="20240218 11:38:07.723"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Not Contain</arg>
+<arg>No Records Found</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Not Contain" library="SeleniumLibrary">
+<arg>No Records Found</arg>
+<doc>Verifies the current page does not contain ``text``.</doc>
+<msg timestamp="20240218 11:38:07.752" level="INFO">Current page does not contain text 'No Records Found'.</msg>
+<status status="PASS" starttime="20240218 11:38:07.723" endtime="20240218 11:38:07.752"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:07.723" endtime="20240218 11:38:07.752"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:06.980" endtime="20240218 11:38:07.752"/>
+</kw>
+<doc>This test case is to test Search functionality</doc>
+<tag>Regression</tag>
+<status status="PASS" starttime="20240218 11:37:51.018" endtime="20240218 11:38:07.753"/>
+</test>
+<test id="s1-t5" name="To verify user details are editable without changing the password" line="52">
+<kw name="Edit the employee from the record" library="admin_res">
+<var>${edit_username}</var>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, 500)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240218 11:38:07.757" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240218 11:38:07.756" endtime="20240218 11:38:07.786"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${updated_edit_xpath}</var>
+<arg>${edit_button}</arg>
+<arg>[adduser]</arg>
+<arg>${username_random}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240218 11:38:07.787" level="INFO">${updated_edit_xpath} = //div[text()='Ricky']//parent::div//following-sibling::div//div//button//i[contains(@class, 'bi-pencil-fill')]</msg>
+<status status="PASS" starttime="20240218 11:38:07.787" endtime="20240218 11:38:07.787"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${updated_edit_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:07.787" endtime="20240218 11:38:07.832"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${updated_edit_xpath}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${updated_edit_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:07.833" level="INFO">Clicking element '//div[text()='Ricky']//parent::div//following-sibling::div//div//button//i[contains(@class, 'bi-pencil-fill')]'.</msg>
+<status status="PASS" starttime="20240218 11:38:07.833" endtime="20240218 11:38:08.363"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:07.832" endtime="20240218 11:38:08.363"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${edit_userrole}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:08.363" endtime="20240218 11:38:08.908"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${edit_userrole}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${edit_userrole}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:08.911" level="INFO">Clicking element '(//div[@class='oxd-select-text oxd-select-text--active'])[1]'.</msg>
+<status status="PASS" starttime="20240218 11:38:08.910" endtime="20240218 11:38:09.215"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:08.909" endtime="20240218 11:38:09.215"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${select_userrole1}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:09.215" endtime="20240218 11:38:09.259"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${select_userrole1}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${select_userrole1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:09.261" level="INFO">Clicking element '//div[@role='listbox']//div[2]'.</msg>
+<status status="PASS" starttime="20240218 11:38:09.260" endtime="20240218 11:38:09.427"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:09.259" endtime="20240218 11:38:09.428"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${edit_employee_name}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:09.428" endtime="20240218 11:38:09.457"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Press Keys</arg>
+<arg>${edit_employee_name}</arg>
+<arg>CTRL+a+BACKSPACE</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${edit_employee_name}</arg>
+<arg>CTRL+a+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240218 11:38:09.459" level="INFO">Sending key(s) ('CTRL+a+BACKSPACE',) to //input[@placeholder='Type for hints...'] element.</msg>
+<msg timestamp="20240218 11:38:09.771" level="INFO">Pressing special key CONTROL down.</msg>
+<msg timestamp="20240218 11:38:09.771" level="INFO">Sending key a</msg>
+<msg timestamp="20240218 11:38:09.771" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg timestamp="20240218 11:38:09.771" level="INFO">Releasing special key CONTROL.</msg>
+<msg timestamp="20240218 11:38:09.771" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20240218 11:38:09.457" endtime="20240218 11:38:09.797"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:09.457" endtime="20240218 11:38:09.797"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${edit_employee_name}</arg>
+<arg>${employee_initial}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${edit_employee_name}</arg>
+<arg>${employee_initial}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:09.798" level="INFO">Typing text 'a' into text field '//input[@placeholder='Type for hints...']'.</msg>
+<status status="PASS" starttime="20240218 11:38:09.797" endtime="20240218 11:38:09.927"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:09.797" endtime="20240218 11:38:09.927"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240218 11:38:19.939" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20240218 11:38:09.928" endtime="20240218 11:38:19.940"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${employee_name_value}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:19.940" endtime="20240218 11:38:19.970"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${employee_name_value}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:19.971" level="INFO">Clicking element '//div[@class='oxd-autocomplete-option'][1]'.</msg>
+<status status="PASS" starttime="20240218 11:38:19.970" endtime="20240218 11:38:20.073"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${edit_status}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:20.074" endtime="20240218 11:38:20.135"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${edit_status}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${edit_status}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:20.137" level="INFO">Clicking element '(//div[@class = 'oxd-select-text oxd-select-text--active'])[2]'.</msg>
+<status status="PASS" starttime="20240218 11:38:20.136" endtime="20240218 11:38:20.228"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:20.136" endtime="20240218 11:38:20.228"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${select_status1}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:20.228" endtime="20240218 11:38:20.270"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${select_status1}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${select_status1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:20.272" level="INFO">Clicking element '(//div[@role = 'listbox'])//div[2]'.</msg>
+<status status="PASS" starttime="20240218 11:38:20.271" endtime="20240218 11:38:20.370"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:20.270" endtime="20240218 11:38:20.370"/>
+</kw>
+<kw name="First Name" library="FakerLibrary">
+<var>${username_edit}</var>
+<msg timestamp="20240218 11:38:20.370" level="INFO">${username_edit} = Lawrence</msg>
+<status status="PASS" starttime="20240218 11:38:20.370" endtime="20240218 11:38:20.370"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${edit_username}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:20.370" endtime="20240218 11:38:20.410"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Press Keys</arg>
+<arg>${edit_username}</arg>
+<arg>CTRL+a+BACKSPACE</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${edit_username}</arg>
+<arg>CTRL+a+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240218 11:38:20.413" level="INFO">Sending key(s) ('CTRL+a+BACKSPACE',) to //input[contains(@class,'oxd-input oxd-input--active')]//ancestor::div//label[text()='Username']/parent::div/following-sibling::div//input element.</msg>
+<msg timestamp="20240218 11:38:20.745" level="INFO">Pressing special key CONTROL down.</msg>
+<msg timestamp="20240218 11:38:20.745" level="INFO">Sending key a</msg>
+<msg timestamp="20240218 11:38:20.745" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg timestamp="20240218 11:38:20.745" level="INFO">Releasing special key CONTROL.</msg>
+<msg timestamp="20240218 11:38:20.745" level="INFO">Releasing special key BACKSPACE.</msg>
+<status status="PASS" starttime="20240218 11:38:20.411" endtime="20240218 11:38:20.769"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:20.411" endtime="20240218 11:38:20.770"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240218 11:38:30.776" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20240218 11:38:20.770" endtime="20240218 11:38:30.776"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Input Text</arg>
+<arg>${edit_username}</arg>
+<arg>${username_edit}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${edit_username}</arg>
+<arg>${username_edit}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:30.777" level="INFO">Typing text 'Lawrence' into text field '//input[contains(@class,'oxd-input oxd-input--active')]//ancestor::div//label[text()='Username']/parent::div/following-sibling::div//input'.</msg>
+<status status="PASS" starttime="20240218 11:38:30.777" endtime="20240218 11:38:30.907"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:30.776" endtime="20240218 11:38:30.907"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${edit_save}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:30.909" endtime="20240218 11:38:30.968"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Button</arg>
+<arg>${edit_save}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${edit_save}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:30.970" level="INFO">Clicking button '//button[normalize-space()='Save']'.</msg>
+<status status="PASS" starttime="20240218 11:38:30.969" endtime="20240218 11:38:31.098"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:30.969" endtime="20240218 11:38:31.098"/>
+</kw>
+<msg timestamp="20240218 11:38:31.098" level="INFO">${edit_username} = Lawrence</msg>
+<status status="PASS" starttime="20240218 11:38:07.756" endtime="20240218 11:38:31.098"/>
+</kw>
+<kw name="Validate user is successfully updated" library="admin_res">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain</arg>
+<arg>Success</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:38:31.395" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-30.png"&gt;&lt;img src="selenium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:38:31.396" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:38:31.100" endtime="20240218 11:38:31.396"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:38:32.707" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-31.png"&gt;&lt;img src="selenium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:38:32.707" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:38:32.402" endtime="20240218 11:38:32.707"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:38:33.726" level="INFO">Current page contains text 'Success'.</msg>
+<status status="PASS" starttime="20240218 11:38:33.708" endtime="20240218 11:38:33.727"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:31.100" endtime="20240218 11:38:33.727"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>User has been successfully updated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240218 11:38:33.727" endtime="20240218 11:38:33.728"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain</arg>
+<arg>Successfully Updated</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Successfully Updated</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:38:33.761" level="INFO">Current page contains text 'Successfully Updated'.</msg>
+<status status="PASS" starttime="20240218 11:38:33.728" endtime="20240218 11:38:33.761"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:33.728" endtime="20240218 11:38:33.761"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>User has been updated successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240218 11:38:33.762" level="INFO">User has been updated successfully</msg>
+<status status="PASS" starttime="20240218 11:38:33.761" endtime="20240218 11:38:33.762"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:31.099" endtime="20240218 11:38:33.762"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${edit_username}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20240218 11:38:33.763" level="INFO">${edit_username} = Lawrence</msg>
+<status status="PASS" starttime="20240218 11:38:33.763" endtime="20240218 11:38:33.763"/>
+</kw>
+<doc>This test case is to test edit functionality</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20240218 11:38:07.755" endtime="20240218 11:38:33.764"/>
+</test>
+<test id="s1-t6" name="To verify user can delete the emloyees from admin screen" line="59">
+<kw name="Delete the employee from the record" library="admin_res">
+<arg>${edit_username}</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, 500)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240218 11:38:33.768" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240218 11:38:33.767" endtime="20240218 11:38:33.778"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${updated_delete_xpath}</var>
+<arg>${delete_button}</arg>
+<arg>[deleteuser]</arg>
+<arg>${edit_user}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240218 11:38:33.779" level="INFO">${updated_delete_xpath} = //div[text() = 'Lawrence']//parent::div//following-sibling::div//div//button//i[contains(@class,'oxd-icon bi-trash')]</msg>
+<status status="PASS" starttime="20240218 11:38:33.778" endtime="20240218 11:38:33.779"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${updated_delete_xpath}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:33.779" endtime="20240218 11:38:36.346"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${updated_delete_xpath}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${updated_delete_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:36.347" level="INFO">Clicking element '//div[text() = 'Lawrence']//parent::div//following-sibling::div//div//button//i[contains(@class,'oxd-icon bi-trash')]'.</msg>
+<status status="PASS" starttime="20240218 11:38:36.347" endtime="20240218 11:38:36.436"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:36.346" endtime="20240218 11:38:36.436"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20240218 11:38:36.436" endtime="20240218 11:38:36.459"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${yes_delete}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:36.460" endtime="20240218 11:38:36.503"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${yes_delete}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${yes_delete}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:36.505" level="INFO">Clicking element '//button[normalize-space()='Yes, Delete']'.</msg>
+<status status="PASS" starttime="20240218 11:38:36.504" endtime="20240218 11:38:36.648"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:36.503" endtime="20240218 11:38:36.648"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:33.767" endtime="20240218 11:38:36.648"/>
+</kw>
+<kw name="Validate user is successfully deleted" library="admin_res">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain</arg>
+<arg>Success</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:38:36.942" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-32.png"&gt;&lt;img src="selenium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:38:36.943" level="FAIL">Page should have contained text 'Success' but did not.</msg>
+<status status="FAIL" starttime="20240218 11:38:36.650" endtime="20240218 11:38:36.943"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Success</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:38:37.964" level="INFO">Current page contains text 'Success'.</msg>
+<status status="PASS" starttime="20240218 11:38:37.946" endtime="20240218 11:38:37.964"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:36.650" endtime="20240218 11:38:37.964"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>User has been successfully deleted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240218 11:38:37.964" endtime="20240218 11:38:37.965"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain</arg>
+<arg>Successfully Deleted</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Successfully Deleted</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:38:37.993" level="INFO">Current page contains text 'Successfully Deleted'.</msg>
+<status status="PASS" starttime="20240218 11:38:37.966" endtime="20240218 11:38:37.994"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:37.965" endtime="20240218 11:38:37.994"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>User has been deleted successfully</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240218 11:38:37.994" level="INFO">User has been deleted successfully</msg>
+<status status="PASS" starttime="20240218 11:38:37.994" endtime="20240218 11:38:37.994"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:36.649" endtime="20240218 11:38:37.994"/>
+</kw>
+<doc>This test case is to test Delete functionality</doc>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20240218 11:38:33.766" endtime="20240218 11:38:37.995"/>
+</test>
+<test id="s1-t7" name="To validate profile about section" line="65">
+<kw name="Click on Profile Page Section" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${profile_click}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:37.999" endtime="20240218 11:38:38.043"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${profile_click}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${profile_click}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:38.045" level="INFO">Clicking element '//i[@class='oxd-icon bi-caret-down-fill oxd-userdropdown-icon']'.</msg>
+<status status="PASS" starttime="20240218 11:38:38.044" endtime="20240218 11:38:38.128"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:38.044" endtime="20240218 11:38:38.128"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:37.999" endtime="20240218 11:38:38.128"/>
+</kw>
+<kw name="Validate the about section details" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${about}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:38.129" endtime="20240218 11:38:38.174"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${about}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${about}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:38.176" level="INFO">Clicking element '//a[text()='About']'.</msg>
+<status status="PASS" starttime="20240218 11:38:38.175" endtime="20240218 11:38:38.288"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:38.174" endtime="20240218 11:38:38.288"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20240218 11:38:38.291" endtime="20240218 11:38:38.317"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain</arg>
+<arg>About</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>About</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:38:38.349" level="INFO">Current page contains text 'About'.</msg>
+<status status="PASS" starttime="20240218 11:38:38.318" endtime="20240218 11:38:38.349"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:38.317" endtime="20240218 11:38:38.349"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain</arg>
+<arg>Version:</arg>
+<arg>OrangeHRM OS 5.6</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Version:</arg>
+<arg>OrangeHRM OS 5.6</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:38:38.652" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240218 11:38:38.652" level="FAIL">Invalid log level 'ORANGEHRM OS 5.6'.</msg>
+<status status="FAIL" starttime="20240218 11:38:38.350" endtime="20240218 11:38:38.685"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Version:</arg>
+<arg>OrangeHRM OS 5.6</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:38:39.720" level="INFO">Current page contains text 'Version:'.</msg>
+<status status="PASS" starttime="20240218 11:38:39.701" endtime="20240218 11:38:39.720"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:38.349" endtime="20240218 11:38:39.720"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain</arg>
+<arg>Active Employees:</arg>
+<arg>117</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Active Employees:</arg>
+<arg>117</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:38:39.749" level="INFO">Current page contains text 'Active Employees:'.</msg>
+<status status="PASS" starttime="20240218 11:38:39.721" endtime="20240218 11:38:39.749"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:39.720" endtime="20240218 11:38:39.749"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:38.129" endtime="20240218 11:38:39.749"/>
+</kw>
+<kw name="Close the about section" library="admin_res">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${about_close}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240218 11:38:39.751" endtime="20240218 11:38:39.903"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${about_close}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${about_close}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240218 11:38:39.905" level="INFO">Clicking element '//button[normalize-space()='×']'.</msg>
+<status status="PASS" starttime="20240218 11:38:39.904" endtime="20240218 11:38:39.992"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:39.903" endtime="20240218 11:38:39.992"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:39.750" endtime="20240218 11:38:39.992"/>
+</kw>
+<doc>This test case is to validate profile about section</doc>
+<tag>Regression</tag>
+<status status="PASS" starttime="20240218 11:38:37.998" endtime="20240218 11:38:39.993"/>
+</test>
+<test id="s1-t8" name="To validate footer" line="72">
+<kw name="Validate the footer" library="admin_res">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240218 11:38:39.998" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240218 11:38:39.998" endtime="20240218 11:38:40.025"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>25x</arg>
+<arg>1s</arg>
+<arg>Page Should Contain</arg>
+<arg>OrangeHRM OS 5.6</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>OrangeHRM OS 5.6</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240218 11:38:40.061" level="INFO">Current page contains text 'OrangeHRM OS 5.6'.</msg>
+<status status="PASS" starttime="20240218 11:38:40.027" endtime="20240218 11:38:40.061"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:40.026" endtime="20240218 11:38:40.061"/>
+</kw>
+<status status="PASS" starttime="20240218 11:38:39.997" endtime="20240218 11:38:40.061"/>
+</kw>
+<doc>This test case is to validate footer section</doc>
+<tag>Regression</tag>
+<status status="PASS" starttime="20240218 11:38:39.996" endtime="20240218 11:38:40.062"/>
+</test>
+<doc>This is a Admin Test Suite</doc>
+<status status="FAIL" starttime="20240218 11:36:31.144" endtime="20240218 11:38:40.065"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">Regression</stat>
+<stat pass="2" fail="1" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="7" fail="1" skip="0" id="s1" name="Admin">Admin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

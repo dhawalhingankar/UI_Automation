@@ -1,0 +1,7 @@
+username_xpath = "//input[@name = 'username']"
+password_xpath = "//input[@name = 'password']"
+login_button = "//button[@type = 'submit']"
+dashboard_xpath = "//a[@class='oxd-main-menu-item active']"
+profile_xpath = "//p[@class='oxd-userdropdown-name']"
+logout_xpath = "//a[text()='Logout']"
+invalid_credential = "//p[@class='oxd-text oxd-text--p oxd-alert-content-text']"
